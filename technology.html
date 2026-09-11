@@ -26,7 +26,7 @@
     <script src="tabs.js" defer></script>
   </head>
 
-  <body class="crew">
+  <body class="technology">
     <a class="skip-to-content" href="#main">Skip to content</a>
     <header class="primary-header flex">
       <div>
@@ -77,23 +77,40 @@
       </nav>
     </header>
 
-    <main id="main" class="grid-container grid-container--crew flow">
+    <main id="main" class="grid-container grid-container--technology flow">
       <h1 class="numbered-title">
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
 
-      <!-- Number tabs -->
+      <picture id="vehicle-image">
+        <source
+          srcset="./assets/technology/image-launch-vehicle-portrait.jpg"
+          media="(width >= 45em)"
+        />
+        <img
+          src="./assets/technology/image-launch-vehicle-landscape.jpg"
+          alt="Launch Vehicle"
+        />
+      </picture>
 
-      <h2>The terminology...</h2>
-      <p>Launch vehicle</p>
+      <div class="number-indicators">
+        <button aria-selected="true" class="ff-serif fs-500">1</button>
+        <button aria-selected="false" class="ff-serif fs-500">2</button>
+        <button aria-selected="false" class="ff-serif fs-500">3</button>
+      </div>
 
-      <p>
-        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to
-        carry a payload from Earth's surface to space, usually to Earth orbit or
-        beyond. Our WEB-X carrier rocket is the most powerful in operation.
-        Standing 150 metres tall, it's quite an awe-inspiring sight on the
-        launch pad!
-      </p>
+      <article>
+        <h2>The terminology...</h2>
+        <p>Launch vehicle</p>
+
+        <p>
+          A launch vehicle or carrier rocket is a rocket-propelled vehicle used
+          to carry a payload from Earth's surface to space, usually to Earth
+          orbit or beyond. Our WEB-X carrier rocket is the most powerful in
+          operation. Standing 150 metres tall, it's quite an awe-inspiring sight
+          on the launch pad!
+        </p>
+      </article>
     </main>
   </body>
 </html>

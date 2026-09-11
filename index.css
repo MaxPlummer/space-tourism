@@ -92,8 +92,7 @@ body {
 }
 
 /* make images easier to work with */
-img,
-picutre {
+img {
   max-width: 100%;
   display: block;
 }
@@ -396,7 +395,7 @@ select {
 
 @media (min-width: 35em) {
   .primary-navigation {
-    padding-inline: clamp(3rem, 5vw, 7rem);
+    padding-inline: clamp(3rem, 7vw, 7rem);
   }
 }
 
@@ -447,7 +446,7 @@ select {
 }
 
 .tab-list {
-  --gap: 2em;
+  --gap: 2rem;
 }
 
 .dot-indicators > * {
@@ -593,6 +592,7 @@ body {
 .grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -640,7 +640,7 @@ body {
 }
 
 .crew-details h2 {
-  color: hsl(var(--clr-white) / 0.5)
+  color: hsl(var(--clr-white) / 0.5);
 }
 
 @media (min-width: 35em) {
@@ -668,7 +668,7 @@ body {
   .grid-container {
     text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
         1rem,
         1fr
       );
@@ -696,8 +696,7 @@ body {
       ". image content .";
   }
 
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     max-width: 90%;
   }
 
@@ -706,18 +705,25 @@ body {
     justify-content: start;
   }
 
-   .grid-container--crew {
+  .grid-container--crew {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(0, 35rem) minmax(0, 25rem)
+      minmax(1rem, 1fr);
+    justify-items: start;
     grid-template-areas:
       ". title title ."
       ". content image ."
       ". tabs image .";
   }
 
-  .grid-container--crew > .dot-indicators {
+  .grid-container--crew > .crew-details {
     justify-self: start;
+    z-index: 1;
   }
 
   .grid-container--crew > picture {
+    grid-column: span 2;
     align-self: end;
+    width: 90%;
   }
 }

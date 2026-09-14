@@ -681,7 +681,7 @@ body {
     "content";
 }
 
-.grid-container--technology > .img-container {
+.grid-container--technology > picture {
   grid-area: image;
   width: 100%;
   aspect-ratio: 1/0.75;
@@ -689,7 +689,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom;
   }
 }
 
@@ -723,6 +722,10 @@ body {
       "content"
       "tabs"
       "image";
+  }
+
+  .grid-container--technology > picture {
+    aspect-ratio: 2.5;
   }
 }
 
@@ -787,5 +790,25 @@ body {
     grid-column: span 2;
     align-self: end;
     width: 90%;
+  }
+
+  .grid-container--technology {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem)
+      minmax(0, 35rem);
+    grid-template-areas:
+      ". title title ."
+      ". tabs content image"
+      ". tabs content image"
+      ". tabs content image";
+  }
+
+  .number-indicators {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .grid-container--technology > picture {
+    aspect-ratio: 1;
   }
 }

@@ -469,6 +469,11 @@ select {
   background-color: hsl(var(--clr-white) / 1);
 }
 
+.number-indicators {
+  display: flex;
+  gap: 1rem;
+}
+
 .number-indicators > * {
   cursor: pointer;
   border: 2px solid hsl(var(--clr-white) / 0.15);
@@ -480,12 +485,12 @@ select {
 }
 
 .number-indicators > button:hover,
-.number-indicators > button:focus {
+.number-indicators > button:focus-visible {
   border-color: hsl(var(--clr-white) / 0.5);
 }
 
 .number-indicators > [aria-selected="true"]:hover,
-.number-indicators > [aria-selected="true"]:focus,
+.number-indicators > [aria-selected="true"]:focus-visible,
 .number-indicators > [aria-selected="true"] {
   border: 0;
   color: hsl(var(--clr-dark));
@@ -557,6 +562,27 @@ body {
     background-image: url(./assets/crew/background-crew-desktop.jpg);
   }
 }
+
+/* Technology */
+
+.technology {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+  .technology {
+    background-position: center center;
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45em) {
+  .technology {
+    background-position: center center;
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+  }
+}
+
 
 /* ----------------------------- */
 /* Layout                        */
@@ -643,6 +669,41 @@ body {
   color: hsl(var(--clr-white) / 0.5);
 }
 
+/* Technology Layout */
+
+.grid-container--technology {
+  --flow-space: 2rem;
+  padding-inline: 0;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--technology > picture {
+  grid-area: image;
+  width: 100%;
+  aspect-ratio: 1/0.75;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.grid-container--technology > .number-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .technology-info {
+  grid-area: content;
+}
+
+.technology-info h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
@@ -661,6 +722,10 @@ body {
       "content"
       "tabs"
       "image";
+  }
+
+  .grid-container--technology > picture {
+    aspect-ratio: 2.5;
   }
 }
 
@@ -725,5 +790,25 @@ body {
     grid-column: span 2;
     align-self: end;
     width: 90%;
+  }
+
+  .grid-container--technology {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem)
+      minmax(0, 35rem);
+    grid-template-areas:
+      ". title title ."
+      ". tabs content image"
+      ". tabs content image"
+      ". tabs content image";
+  }
+
+  .number-indicators {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .grid-container--technology > picture {
+    aspect-ratio: 1;
   }
 }

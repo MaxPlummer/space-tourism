@@ -82,16 +82,44 @@
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
 
-      <picture id="vehicle-image">
-        <source
-          srcset="./assets/technology/image-launch-vehicle-portrait.jpg"
-          media="(width >= 45em)"
-        />
-        <img
-          src="./assets/technology/image-launch-vehicle-landscape.jpg"
-          alt="Launch Vehicle"
-        />
-      </picture>
+      <div id="vehicle-image" class="img-container">
+        <picture>
+          <source
+            srcset="./assets/technology/image-launch-vehicle-landscape.jpg"
+            media="(min-width: 35em) and (max-width: 44.999em)"
+          />
+          <img
+            src="./assets/technology/image-launch-vehicle-portrait.jpg"
+            alt="Launch Vehicle"
+          />
+        </picture>
+      </div>
+
+      <div id="spaceport-image" class="img-container" hidden>
+        <picture>
+          <source
+            srcset="./assets/technology/image-spaceport-landscape.jpg"
+            media="(min-width: 35em) and (max-width: 44.999em)"
+          />
+          <img
+            src="./assets/technology/image-spaceport-portrait.jpg"
+            alt="Spaceport"
+          />
+        </picture>
+      </div>
+
+      <div id="capsule-image" class="img-container" hidden>
+        <picture>
+          <source
+            srcset="./assets/technology/image-space-capsule-landscape.jpg"
+            media="(min-width: 35em) and (max-width: 44.999em)"
+          />
+          <img
+            src="./assets/technology/image-space-capsule-portrait.jpg"
+            alt="Space Capsule"
+          />
+        </picture>
+      </div>
 
       <div class="number-indicators">
         <button aria-selected="true" class="ff-serif fs-500">1</button>
@@ -99,9 +127,17 @@
         <button aria-selected="false" class="ff-serif fs-500">3</button>
       </div>
 
-      <article>
-        <h2>The terminology...</h2>
-        <p>Launch vehicle</p>
+      <!-- Launch Vehicle-->
+      <article
+        class="technology-info flow"
+        id="vehicle-tab"
+        tabindex="0"
+        role="tabpanel"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+          <p class="fs-700 uppercase ff-serif">Launch vehicle</p>
+        </header>
 
         <p>
           A launch vehicle or carrier rocket is a rocket-propelled vehicle used
@@ -109,6 +145,49 @@
           orbit or beyond. Our WEB-X carrier rocket is the most powerful in
           operation. Standing 150 metres tall, it's quite an awe-inspiring sight
           on the launch pad!
+        </p>
+      </article>
+
+      <!-- Spaceport -->
+      <article
+        hidden
+        class="technology-info flow"
+        id="spaceport-tab"
+        tabindex="0"
+        role="tabpanel"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+          <p class="fs-700 uppercase ff-serif">Spaceport</p>
+        </header>
+
+        <p>
+          A spaceport or cosmodrome is a site for launching (or receiving)
+          spacecraft, by analogy to the seaport for ships or airport for
+          aircraft. Based in the famous Cape Canaveral, our spaceport is ideally
+          situated to take advantage of the Earth’s rotation for launch.
+        </p>
+      </article>
+
+      <!-- Space Capsule -->
+      <article
+        hidden
+        class="technology-info flow"
+        id="capsule-tab"
+        tabindex="0"
+        role="tabpanel"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
+          <p class="fs-700 uppercase ff-serif">Space capsule</p>
+        </header>
+
+        <p>
+          A space capsule is an often-crewed spacecraft that uses a blunt-body
+          reentry capsule to reenter the Earth's atmosphere without wings. Our
+          capsule is where you'll spend your time during the flight. It includes
+          a space gym, cinema, and plenty of other activities to keep you
+          entertained.
         </p>
       </article>
     </main>

@@ -793,6 +793,7 @@ body {
   }
 
   .grid-container--technology {
+    padding-bottom: 3vh;
     grid-template-columns:
       minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem)
       minmax(0, 35rem);

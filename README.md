@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/MaxPlummer/space-tourism
-- Live Site URL: https://maxplummer.github.io/space-tourism/destination.html
+- Live Site URL: https://maxplummer.github.io/space-tourism/index.html
 
 ## My process
 
